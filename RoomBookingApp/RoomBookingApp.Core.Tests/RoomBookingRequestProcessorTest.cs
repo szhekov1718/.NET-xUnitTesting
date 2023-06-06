@@ -1,4 +1,6 @@
-﻿using RoomBookingApp.Core.Models;
+﻿using Moq;
+using RoomBookingApp.Core.DataServices;
+using RoomBookingApp.Core.Models;
 using RoomBookingApp.Core.Processors;
 using Shouldly;
 
@@ -6,6 +8,24 @@ namespace RoomBookingApp.Core.Tests
 {
     public class RoomBookingRequestProcessorTest
     {
+        private readonly RoomBookingRequestProcessor _processor;
+        private readonly RoomBookingRequest _roomBookingRequest;
+        private Mock<IRoomBookingService> _roomBookingServiceMock;
+
+        public RoomBookingRequestProcessorTest()
+        {
+            _roomBookingRequest = new RoomBookingRequest()
+            {
+                FullName = "Test Test",
+                Email = "test@abv.bg",
+                Date = new DateTime(2023, 6, 5)
+            };
+
+            _roomBookingServiceMock = new Mock<IRoomBookingService>();
+
+            _processor = new RoomBookingRequestProcessor(_roomBookingServiceMock.Object);
+        }
+
         [Fact]
         public void Should_Return_Room_Booking_Response_With_Request_Values()
         {
@@ -18,11 +38,9 @@ namespace RoomBookingApp.Core.Tests
                 Date = new DateTime(2021, 10, 20)
             };
 
-            var processor = new RoomBookingRequestProcessor();
-
             //Act
 
-            RoomBookingResult result = processor.BookRoom(request);
+            RoomBookingResult result = _processor.BookRoom(request);
 
             //Assert
 
