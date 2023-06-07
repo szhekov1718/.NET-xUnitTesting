@@ -1,3 +1,4 @@
+using RoomBookingApp.Core.Contracts;
 using RoomBookingApp.Core.Processors;
 
 var builder = WebApplication.CreateBuilder(args);
