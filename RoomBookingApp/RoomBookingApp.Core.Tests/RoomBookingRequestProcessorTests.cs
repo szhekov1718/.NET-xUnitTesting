@@ -8,14 +8,14 @@ using Shouldly;
 
 namespace RoomBookingApp.Core.Tests
 {
-    public class RoomBookingRequestProcessorTest
+    public class RoomBookingRequestProcessorTests
     {
         private readonly RoomBookingRequestProcessor _processor;
         private readonly RoomBookingRequest _roomBookingRequest;
         private readonly List<Room> _availableRooms;
         private Mock<IRoomBookingService> _roomBookingServiceMock;
 
-        public RoomBookingRequestProcessorTest()
+        public RoomBookingRequestProcessorTests()
         {
             _roomBookingRequest = new RoomBookingRequest()
             {

@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <ProjectReference Include="..\RoomBookingApp.Core\RoomBookingApp.Core.csproj" />
+    <ProjectReference Include="..\RoomBookingApp.Domain\RoomBookingApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>
