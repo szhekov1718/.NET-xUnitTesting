@@ -30,6 +30,7 @@ namespace RoomBookingApp.Core.Processors
                 var room = availabeRooms.First();
                 var roomBooking = CreateRoomBookingObject<RoomBooking>(bookingRequest);
                 roomBooking.RoomId = room.Id;
+
                 _roomBookingService.Save(roomBooking);
 
                 result.RoomBookingId = roomBooking.Id;
