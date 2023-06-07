@@ -13,11 +13,6 @@ public class RoomBookingDbContext : DbContext
 
     public DbSet<RoomBooking> RoomBookings { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseInMemoryDatabase(databaseName: "RoomBookingDbContext");
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
