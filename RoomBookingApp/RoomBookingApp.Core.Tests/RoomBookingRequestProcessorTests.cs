@@ -13,7 +13,7 @@ namespace RoomBookingApp.Core.Tests
         private readonly RoomBookingRequestProcessor _processor;
         private readonly RoomBookingRequest _roomBookingRequest;
         private readonly List<Room> _availableRooms;
-        private Mock<IRoomBookingService> _roomBookingServiceMock;
+        private readonly Mock<IRoomBookingService> _roomBookingServiceMock;
 
         public RoomBookingRequestProcessorTests()
         {
@@ -45,15 +45,10 @@ namespace RoomBookingApp.Core.Tests
 
             RoomBookingResult result = _processor.BookRoom(request);
 
-            // Assert.NotNull(result);
-            // Assert.Equal(request.FullName, result.FullName);
-            // Assert.Equal(request.Email, result.Email);
-            // Assert.Equal(request.Date, result.Date);
-
-            result.ShouldNotBeNull();
-            result.FullName.ShouldBe(request.FullName);
-            result.Email.ShouldBe(request.Email);
-            result.Date.ShouldBe(request.Date);
+            Assert.NotNull(result);
+            Assert.Equal(request.FullName, result.FullName);
+            Assert.Equal(request.Email, result.Email);
+            Assert.Equal(request.Date, result.Date);
         }
 
         [Fact]

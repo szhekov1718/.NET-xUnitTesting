@@ -9,7 +9,7 @@ namespace RoomBookingApp.Api.Controllers
     [Route("[controller]")]
     public class RoomBookingController : ControllerBase
     {
-        private IRoomBookingRequestProcessor _roomBookingProcessor;
+        private readonly IRoomBookingRequestProcessor _roomBookingProcessor;
 
         public RoomBookingController(IRoomBookingRequestProcessor roomBookingProcessor)
         {

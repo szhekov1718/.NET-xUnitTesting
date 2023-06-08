@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+#pragma warning disable VSSpell001 // Spell Check
+
 namespace RoomBookingApp.Domain.BaseModels
+#pragma warning restore VSSpell001 // Spell Check
 {
     public class RoomBookingBase : IValidatableObject
     {
