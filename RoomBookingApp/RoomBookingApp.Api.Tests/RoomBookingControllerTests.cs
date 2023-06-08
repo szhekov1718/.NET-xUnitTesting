@@ -10,10 +10,10 @@ namespace RoomBookingApp.Api.Tests
 {
     public class RoomBookingControllerTests
     {
-        private Mock<IRoomBookingRequestProcessor> _roomBookingProcessor;
-        private RoomBookingController _controller;
-        private RoomBookingRequest _request;
-        private RoomBookingResult _result;
+        private readonly Mock<IRoomBookingRequestProcessor> _roomBookingProcessor;
+        private readonly RoomBookingController _controller;
+        private readonly RoomBookingRequest _request;
+        private readonly RoomBookingResult _result;
 
         public RoomBookingControllerTests()
         {
